@@ -11,8 +11,12 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('/ebook', function () {
+    return view('ebook');
 });
 Route::get('/test', function () {
     return view('test');
@@ -22,4 +26,5 @@ Route::resource('viewapi', 'ToDoController', ['only' => [
     'getApi'
 ]]);
 */
-Route::get('viewapi' ,'RichMediaController@GetData');
+Route::get('/' ,'EbookController@GetEbook');
+Route::get('/ebook/{id}', 'EbookController@GetDetailEbookID');
