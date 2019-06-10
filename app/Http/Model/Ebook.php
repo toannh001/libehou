@@ -26,6 +26,12 @@ Class Ebook{
 		$request = $api->WebGet($url );
 		return json_decode($request);
 	}
+	public static function GetRelateEbook($id,$nganh){
+		$url = "http://uni.ehou.edu.vn/api/v1/LCMSHocLieu?maxSize=100&offset=0&orderBy=createdAt&order=desc&where[0][type]=in&where[0][attribute]=loaiHocLieu&where[0][value][]=Doc&where[1][type]=contains&where[1][attribute]=nganhId&where[1][value]=".$nganh."&where[2][attribute]=id&where[2][type]=notIn&where[2][attribute]=id&where[2][value]=".$id;
+		$api=new API();
+		$request = $api->WebGet($url );
+		return json_decode($request);
+	}
 	public static function updateLNT($id,$mobiToken){
 		$url = "http://localhost/api/v1/TaiKhoanCanThanhToan/" . $id;
 		$response2 = WebPut($url, '{"passmyvt":"' . $mobiToken . '"}' );

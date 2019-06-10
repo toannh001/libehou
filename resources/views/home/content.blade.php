@@ -627,7 +627,7 @@
 																 </div>
 																 <!-- end product-image -->
 																 <div class="product-content">
-																	<h4 class="product_title"><a class="bks_product_title_link" href="http://wp.acmeedesign.com/bookstore/product/loving-kitchen-2/">{{ $product->name }}</a></h4>
+																	<h4 class="product_title"><a class="bks_product_title_link" href="ebook/{{ $product->id }}">{{ $product->name }}</a></h4>
 																	<span class="price"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>40.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>20.00</span></ins></span>
 																 </div>
 																 <!-- end product-content -->   
@@ -811,7 +811,7 @@
 																 </div>
 																 <!-- end product-image -->
 																 <div class="product-content">
-																	<h4 class="product_title"><a class="bks_product_title_link" href="http://wp.acmeedesign.com/bookstore/product/loving-kitchen-2/">{{ $product->name }}</a></h4>
+																	<h4 class="product_title"><a class="bks_product_title_link" href="ebook/{{$product->id}}">{{ $product->name }}</a></h4>
 																	<span class="price"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>40.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#036;</span>20.00</span></ins></span>
 																 </div>
 																 <!-- end product-content -->   

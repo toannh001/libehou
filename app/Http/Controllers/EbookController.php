@@ -32,22 +32,29 @@ class EbookController extends Controller
         return view('index',compact('TCNNH','KETOAN','LKT','NNA','QTKD'));
 	}
 	public function GetDetailEbookID($id){
-		$basepath = storage_path() . '/data';
-		$fileName = 'invoice_20160729';
-		$flie=file_get_contents('http://moocs.ehou.edu.vn/wp-content/uploads/2019/06/test.zip');
-		$save=file_put_contents(storage_path(),$flie);
+		$ebook=new Ebook();
+		$ebook_detail = $ebook->GetDetailEbook($id);
+		foreach ($ebook_detail->list as $ebook_data) {
+			$fileId=$ebook_data->fileId;
+			$fileName=$ebook_data->fileName;
+			$nganh=$ebook_data->nganhId;
+		}
+		$ebook_relate=$ebook->GetRelateEbook($id,$nganh);
+
+		//$basepath = storage_path() . '/data';
+		//$fileName = 'invoice_20160729';
+		//$flie=file_get_contents('http://moocs.ehou.edu.vn/wp-content/uploads/2019/06/test.zip');
+		//$save=file_put_contents(storage_path(),$flie);
 		//$contents = Storage::url('http://uni.ehou.edu.vn/?entryPoint=download&id=5cf88390ed2109764');
 		//echo $contents;
-		exit();
+		//exit();
 		//Storage::put('http://uni.ehou.edu.vn/?entryPoint=download&id=5cf88390ed2109764', $contents);
 		/*
 		if (file_exists($basepath . '/' . $fileName)) {
 		    return response()->download($basepath . '/' . $fileName);
 		}*/
 		//response()->download('http://uni.ehou.edu.vn/?entryPoint=download&id=5cf88390ed2109764');
-		$ebook=new Ebook();
-		$ebook_detail = $ebook->GetDetailEbook($id);
-        return view('ebook',compact('ebook_detail'));
+        return view('ebook',compact('ebook_detail','ebook_relate'));
 	}
 	public function DemoGetAPI(){
 		$richMedia=new Ebook();
