@@ -20,6 +20,12 @@ Class Ebook{
 		$request = $api->WebGet($url );
 		return json_decode($request);
 	}
+	public static function GetHoclieudientu($nganh){
+		$url = "http://uni.ehou.edu.vn/api/v1/LCMSNhomHocLieu?maxSize=20&offset=0&orderBy=createdAt&order=desc";
+		$api=new API();
+		$request = $api->WebGet($url );
+		return json_decode($request);
+	}
 	public static function GetDetailEbook($id){
 		$url = "http://uni.ehou.edu.vn/api/v1/LCMSHocLieu?maxSize=100&offset=0&orderBy=createdAt&order=desc&where[0][type]=in&where[0][attribute]=loaiHocLieu&where[0][value][]=Doc&where[1][type]=contains&where[1][attribute]=id&where[1][value]=" . $id;
 		$api=new API();
@@ -31,6 +37,10 @@ Class Ebook{
 		$api=new API();
 		$request = $api->WebGet($url );
 		return json_decode($request);
+	}
+	public static function DownloadFile($fileName,$fileId,$loaihoclieu,$tenmon){
+		$api=new API();
+		$request = $api->DownloadFile($fileName,$fileId,$loaihoclieu,$tenmon);
 	}
 	public static function updateLNT($id,$mobiToken){
 		$url = "http://localhost/api/v1/TaiKhoanCanThanhToan/" . $id;

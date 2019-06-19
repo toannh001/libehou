@@ -1,0 +1,63 @@
+@media (min-width: 768px){
+	#hldt_index,#ebook_index{
+		width:50% !important;
+	}
+	.image_hoclieu{
+		margin-right: 10px;
+		margin-top: -3px;
+	}
+	.content_richmedia a{
+
+	}
+	.woocommerce .product-wrap .product-content{
+		height: 38px;
+	}
+	.hinhanhchitiet{
+		width:45% !important;
+	}
+	.noidungchitiet{
+		width:54% !important;
+	}
+	.logo{
+		text-align:right;
+	}
+}
+@media (max-width: 768px){
+	.image_hoclieu{
+		margin-right: 8px;
+		margin-top: -3px;
+	}
+}
+.nav-menu-red{
+    height: 50px;
+    border-bottom: 2px solid rgb(81, 163, 81);
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 3px;
+    margin: 0;
+}
+.show-brand .navbar-brand {
+    display: block;
+    margin-left: 0!important;
+    text-transform: uppercase;
+    padding: 0;
+    padding-left: 0px;
+    font-size: 16px;
+    color: #000;
+    text-align: left
+}
+.tabthongtinkhac{
+	color: #f7f7f7;
+}
+.tabthongtinkhac:hover{
+	color: #FFFF00 !important;
+}
+.motahoclieu{
+	text-align:justify;
+}
+#header{
+	background: url(../images/banner_elc_2019.png) no-repeat rgba(0, 0, 0, 0);
+    background-color: #003a6a;
+    border-bottom: 4px solid;
+    background-size: 100%;
+}

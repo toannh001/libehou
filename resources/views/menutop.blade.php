@@ -17,16 +17,7 @@
                         </h3>
                      </li>
                      <li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home current-menu-ancestor current-menu-parent menu-item-has-children menu-item-30 vc-menu-item vc-d-0 vc-mm-layout-full">
-                        <a href="http://wp.acmeedesign.com/bookstore" class="nav-link"><span class="vc-label">Trang chủ</span></a>
-                        <div class='sub-menu'>
-                           <ul class="sub-menu-inner">
-                              <li id="menu-item-376" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-376 vc-menu-item vc-d-1 vc-mm-layout-full"><a href="http://wp.acmeedesign.com/bookstore" class="nav-link"><span class="vc-label">Home Style 1</span></a></li>
-                              <li id="menu-item-377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-377 vc-menu-item vc-d-1 vc-mm-layout-full"><a href="http://wp.acmeedesign.com/bookstore2" class="nav-link"><span class="vc-label">Home Style 2</span></a></li>
-                              <li id="menu-item-378" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-378 vc-menu-item vc-d-1 vc-mm-layout-full"><a href="http://wp.acmeedesign.com/bookstore3" class="nav-link"><span class="vc-label">Home Style 3</span></a></li>
-                              <li id="menu-item-379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-379 vc-menu-item vc-d-1 vc-mm-layout-full"><a href="http://wp.acmeedesign.com/bookstore4" class="nav-link"><span class="vc-label">Home Style 4</span></a></li>
-                              <li id="menu-item-380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-380 vc-menu-item vc-d-1 vc-mm-layout-full"><a href="http://wp.acmeedesign.com/bookstore5" class="nav-link"><span class="vc-label">Home Style 5</span></a></li>
-                           </ul>
-                        </div>
+                        <a href="http://localhost/libehou/public" class="nav-link"><span class="vc-label">Trang chủ</span></a>
                      </li>
                      <li id="menu-item-118" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-118 vc-menu-item vc-d-0 vc-mm-mega vc-mm-align-default vc-mm-layout-full" 
                      -mm-settings="{&quot;layout&quot;:&quot;full&quot;,&quot;width&quot;:&quot;&quot;}" >
@@ -190,9 +181,8 @@
                      <div class="form">
                         <input type="search" class="field" name="s" value="" id="s" placeholder="Search &hellip;" />
                      </div>
-                     <div class="search-type">
-                        <input type="hidden" name="post_type" value="product"
-                           />              
+                     <div class="search-type">						
+                        <input type="hidden" name="post_type" value="product"/>              
                      </div>
                   </form>
                </div>

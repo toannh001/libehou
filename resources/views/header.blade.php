@@ -3,7 +3,7 @@
                   <!-- LOGO -->
                   <div class="col-xs-12 col-sm-6 col-lg-8 col-md-6 logo">
                      <div class="site-logo">
-                        <a href="http://wp.acmeedesign.com/bookstore/" title="Book Store">                            
+                        <a href="http://localhost/libehou/public/" title="Book Store">                            
                         <img class="logo-img" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="Book Store" />
                         </a>
                      </div>
@@ -11,8 +11,8 @@
                   <!-- //LOGO -->
                   <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
                   </div>
+				  <!--
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                     <!-- bks-cart-widget -->
                      <div class="bks-cart-widget right">
                         <div class="currency-switcher pull-left">
                            <form method="post" action="" class="woocommerce-currency-switcher-form ">
@@ -33,7 +33,7 @@
                            </div>
                         </div>
                      </div>
-                     <!-- //bks-cart-widget -->
                   </div>
+				  !-->
                </div>
             </div>

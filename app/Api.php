@@ -13,9 +13,24 @@ Class API{
 	    curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','X-Api-Key: '.$this->apikey, 'Accept: application/json, text/javascript, */*; q=0.01'));
 	    $res = curl_exec($ch);
-		//print_r($res);exit;
 		curl_close($ch);
 		return $res;
+	}
+	public function DownloadFile($fileName,$fileId,$loaihoclieu,$tenmon){
+		//Global $apikey;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	    curl_setopt($ch, CURLOPT_URL, "http://uni.ehou.edu.vn/?entryPoint=download&id=".$fileId);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','X-Api-Key: '.$this->apikey, 'Accept: application/json, text/javascript, */*; q=0.01'));
+		curl_setopt($ch, CURLOPT_URL, "http://uni.ehou.edu.vn/?entryPoint=download&id=".$fileId);
+		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
+		$file_data=curl_exec($ch);
+		curl_close($ch);
+		$file_path=storage_path() . '/data/'.$tenmon.'/'.$loaihoclieu.'/'.$fileName;
+		$file=fopen($file_path,'w+');
+		fputs($file,$file_data);
+		fclose($file);
 	}
 	public static function WebPost($url,$param){
 		//Global $apikey;

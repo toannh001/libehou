@@ -15,6 +15,9 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/slider', function () {
+    return view('home/slider');
+});
 Route::get('/ebook', function () {
     return view('ebook');
 });
@@ -26,5 +29,7 @@ Route::resource('viewapi', 'ToDoController', ['only' => [
     'getApi'
 ]]);
 */
-Route::get('/' ,'EbookController@GetEbook');
-Route::get('/ebook/{id}', 'EbookController@GetDetailEbookID');
+Route::get('/' ,'IndexController@GetDataIndex');
+Route::get('/ebook/{id}', 'IndexController@GetDetailEbookID');
+Route::get('/hoclieu/{id}', 'HoclieudientuController@GetDetailHoclieuID');
+Route::get('/hoclieu/downloadrich/{id}', 'HoclieudientuController@DownloadRichMedia');
