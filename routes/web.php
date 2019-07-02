@@ -33,3 +33,5 @@ Route::get('/' ,'IndexController@GetDataIndex');
 Route::get('/ebook/{id}', 'IndexController@GetDetailEbookID');
 Route::get('/hoclieu/{id}', 'HoclieudientuController@GetDetailHoclieuID');
 Route::get('/hoclieu/downloadrich/{id}', 'HoclieudientuController@DownloadRichMedia');
+//Route::get('/search/{s}', 'SearchController@Timkiemhoclieu');
+Route::get('/search/','SearchController@Timkiemhoclieu');

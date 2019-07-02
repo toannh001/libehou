@@ -177,12 +177,12 @@
                   </ul>
                </div>
                <div class="nav-search">
-                  <form method="get" id="searchform" class="searchform" action="http://wp.acmeedesign.com/bookstore/">
+                  <form method="get" id="searchform" class="searchform" action="search/">
                      <div class="form">
                         <input type="search" class="field" name="s" value="" id="s" placeholder="Search &hellip;" />
                      </div>
                      <div class="search-type">						
-                        <input type="hidden" name="post_type" value="product"/>              
+                        <input type="hidden" name="post_type" value="product"/>           
                      </div>
                   </form>
                </div>

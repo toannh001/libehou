@@ -33,6 +33,7 @@ class HoclieudientuController extends Controller
 	public function DownloadRichMedia($id){
 		$HLDT=new HLDT();
 		$baigiang_richmedia=$HLDT->GetDetailRichMedia($id);
+		print_r($baigiang_richmedia);exit();
 		foreach ($baigiang_richmedia->list as $richmedia) {
 			$fileId=$richmedia->fileId;
 			$fileName=$richmedia->fileName;

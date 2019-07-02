@@ -26,6 +26,12 @@ Class HLDT{
 		$request = $api->WebGet($url );
 		return json_decode($request);
 	}
+	public static function Timkiemhoclieu($name){
+		$url = "http://uni.ehou.edu.vn/api/v1/LCMSNhomHocLieu?orderBy=name&maxSize=20&q=".$name;
+		$api=new API();
+		$request = $api->WebGet($url );
+		return json_decode($request);
+	}
 	public static function GetRichMedia($id){
 		$url = "http://uni.ehou.edu.vn/api/v1/LCMSHocLieu?maxSize=100&offset=0&order=asc&where%5B0%5D%5Btype%5D=in&where%5B0%5D%5Battribute%5D=loaiHocLieu&where%5B0%5D%5Bvalue%5D%5B%5D=Rick+Media&where%5B1%5D%5Btype%5D=contains&where%5B1%5D%5Battribute%5D=lCMSNhomHocLieuId&where%5B1%5D%5Bvalue%5D=".$id;
 		$api=new API();
