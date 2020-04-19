@@ -78,7 +78,7 @@
                            <div class=''>
                               <div class='dis-bottom-left'>
                                  <div class='dis-bottom-left-img'>
-                                    <img src='http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/home-1-ebook.jpg' alt='E-BOOKS'>
+                                    <img src="{{ asset('public/images/home-1-ebook.jpg') }}" alt='E-BOOKS'>
                                     <div class='dis-bottom-left-content'>
                                        <div class='dis-bottom-left-text'>
                                           <h6 style='color:#323232'></h6>
@@ -99,7 +99,7 @@
                            <div class=''>
                               <div class='dis-bottom-left'>
                                  <div class='dis-bottom-left-img'>
-                                    <img src='http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/home-1-offer.jpg' alt='OFFER ZONE'>
+                                    <img src="{{ asset('public/images/home-1-offer.jpg') }}" alt='Học liệu điện tử'>
                                     <div class='dis-bottom-left-content'>
                                        <div class='dis-bottom-left-text'>
                                           <h6 style='color:#323232'></h6>
@@ -164,7 +164,7 @@
 																 <div class="product-image">
 																	<div class="catalog-image">
 																	   <a href="ebook/{{$product->id}}">
-																		  <img width="207" height="265" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book11.png" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book11" sizes="(max-width: 207px) 100vw, 207px" />                        
+																		  <img width="207" height="265" src="{{ asset('public/images/ebook5.png') }}" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book11" sizes="(max-width: 207px) 100vw, 207px" />                        
 																		  <div class="button yith-wcqv-button" data-product_id="{{ $product->id }}">
 																			 <i class="fa fa-search"></i>
 																		  </div>
@@ -209,7 +209,7 @@
 																 <div class="product-image">
 																	<div class="catalog-image">
 																	   <a href="ebook/{{$product->id}}">
-																		  <img width="207" height="265" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book11.png" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book11" srcset="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book11-100x128.png 100w, http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book11.png 555w" sizes="(max-width: 207px) 100vw, 207px" />                        
+																		  <img width="207" height="265" src="{{ asset('public/images/ebook5.png') }}" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book11" sizes="(max-width: 207px) 100vw, 207px" />                        
 																		  <div class="button yith-wcqv-button" data-product_id="{{ $product->id }}">
 																			 <i class="fa fa-search"></i>
 																		  </div>
@@ -254,7 +254,7 @@
 																 <div class="product-image">
 																	<div class="catalog-image">
 																	   <a href="ebook/{{$product->id}}">
-																		  <img width="207" height="265" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book12.png" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book6" srcset="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book6-100x128.png 100w, http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book6.png 555w" sizes="(max-width: 207px) 100vw, 207px" />                        
+																		  <img width="207" height="265" src="{{ asset('public/images/ebook5.png') }}" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book6" sizes="(max-width: 207px) 100vw, 207px" />                        
 																		  <div class="button yith-wcqv-button" data-product_id="{{ $product->id }}">
 																			 <i class="fa fa-search"></i>
 																		  </div>
@@ -299,7 +299,7 @@
 																 <div class="product-image">
 																	<div class="catalog-image">
 																	   <a href="ebook/{{$product->id}}">
-																		  <img width="207" height="265" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book12.png" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book6" srcset="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book6-100x128.png 100w, http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book6.png 555w" sizes="(max-width: 207px) 100vw, 207px" />                        
+																		  <img width="207" height="265" src="{{ asset('public/images/ebook5.png')}}" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book6"  sizes="(max-width: 207px) 100vw, 207px" />                        
 																		  <div class="button yith-wcqv-button" data-product_id="{{ $product->id }}">
 																			 <i class="fa fa-search"></i>
 																		  </div>
@@ -344,7 +344,7 @@
 																 <div class="product-image">
 																	<div class="catalog-image">
 																	   <a href="ebook/{{$product->id}}">
-																		  <img width="207" height="265" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book12.png" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book12" srcset="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book12-100x128.png 100w, http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book12.png 555w" sizes="(max-width: 207px) 100vw, 207px" />                        
+																		  <img width="207" height="265" src="{{ asset('public/images/ebook5.png') }}" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book12" sizes="(max-width: 207px) 100vw, 207px" />                        
 																		  <div class="button yith-wcqv-button" data-product_id="{{ $product->id }}">
 																			 <i class="fa fa-search"></i>
 																		  </div>
@@ -389,7 +389,7 @@
 																 <div class="product-image">
 																	<div class="catalog-image">
 																	   <a href="ebook/{{$product->id}}">
-																		  <img width="207" height="265" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/02/book11.png" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book11" sizes="(max-width: 207px) 100vw, 207px" />                        
+																		  <img width="207" height="265" src={{ asset('public/images/ebook5.png') }}" class="attachment-bookstore_product_thumb size-bookstore_product_thumb wp-post-image" alt="book11" sizes="(max-width: 207px) 100vw, 207px" />                        
 																		  <div class="button yith-wcqv-button" data-product_id="{{ $product->id }}">
 																			 <i class="fa fa-search"></i>
 																		  </div>

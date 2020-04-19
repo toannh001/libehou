@@ -75,7 +75,7 @@
          <style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style>
       </noscript>
    </head>
-   <body class="home page page-id-31 page-template page-template-page-blank page-template-page-blank-php wpb-js-composer js-comp-ver-4.9.2 vc_responsive currency-usd">
+   <body class="home page page-id-31 page-template page-template-page-blank page-template-page-blank-php wpb-js-composer js-comp-ver-4.9.2 vc_responsive currency-usd woocommerce woocommerce-page">
       <div class="wrapper">
          <!-- TOPBAR -->
 		 <!--
@@ -106,7 +106,6 @@
          <nav class="main-menu affix-top" data-spy="affix" data-offset-top="110"> 
 			@yield('menutop')            
          </nav>
-         
          <!-- //MAIN NAVIGATION -->
          <!-- Slide show -->
          <div class="wrap jb-slideshow">

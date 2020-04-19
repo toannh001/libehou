@@ -3,8 +3,8 @@
                   <!-- LOGO -->
                   <div class="col-xs-12 col-sm-6 col-lg-8 col-md-6 logo">
                      <div class="site-logo">
-                        <a href="http://localhost/libehou/public/" title="Book Store">                            
-                        <img class="logo-img" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="Book Store" />
+                        <a href="http://localhost/libehou/public/" title="Thư viện điện tử">                            
+                        <img class="logo-img" src="{{ asset('public/images/logo_thuvien.png') }}" alt="Thư viện điện tử" />
                         </a>
                      </div>
                   </div>

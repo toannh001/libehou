@@ -10,6 +10,8 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Message\Response;
 use App\Http\Model\Ebook;
 use App\Http\Model\HLDT;
+use Illuminate\Pagination\LengthAwarePaginator as Paginator;
+//use Illuminate\Pagination\Paginator;
 use Storage;
 use ZipArchive;
 class HoclieudientuController extends Controller
@@ -28,12 +30,44 @@ class HoclieudientuController extends Controller
 		$baigiang_text=$HLDT->GetBaigiangText($id);
 		$baigiang_ebook=$HLDT->GetEbook($id);
 		$hoclieu_relate=$HLDT->GetRelateHoclieu($id,'TAICHINHNGANHANG');
-        return view('hoclieu',compact('hoclieu_detail','hoclieu_relate','baigiang_richmedia','baigiang_text','baigiang_ebook'));
+        return view('hoclieu_detail',compact('hoclieu_detail','hoclieu_relate','baigiang_richmedia','baigiang_text','baigiang_ebook'));
+	}
+	public function ViewBaigiangText($textId){
+		$HLDT=new HLDT();
+		$text=$HLDT->VỉewBaigiangText($textId);
+		return redirect('http://uni.ehou.edu.vn/?entryPoint=download&id='.$textId);
+	}
+	public function GetHoclieuByNganh(Request $request,$nganh){
+		$HLDT=new HLDT();
+		$nganhhoclieu=$nganh;
+		$hoclieu = $HLDT->GetHoclieuByNganh('CONGNGHETHONGTIN');
+		$select=$request->input('orderby');
+		//echo $request->path();
+		//echo $select;exit();
+		// code phân trang
+        foreach($hoclieu->list as $item){
+            $filter_products[]=(array)$item;
+        }
+        $count = count($filter_products);
+        $total=$count;
+		$page=$request->page;
+		if($page == '')
+		{
+			$page=1;
+		}
+		$perPage=9;
+		$offset = ($page-1) * $perPage;
+		$vitridau=($perPage*($page-1))+1; // thứ tự sản phẩm ở vị trí đầu tiên trong trang
+		$vitricuoi=$perPage*$page;// thứ tự cuối cùng của sản phẩm
+        $products = array_slice($filter_products, $offset, $perPage);
+		$data = new Paginator($products,$count,$perPage,$page, ['path'  => $request->url(),'query' => $request->query(),]);
+		//$data = new Paginator($hoclieu->list,,$perPage);
+        return view('hoclieu',compact('data','vitridau','vitricuoi','total','nganhhoclieu'));
 	}
 	public function DownloadRichMedia($id){
 		$HLDT=new HLDT();
 		$baigiang_richmedia=$HLDT->GetDetailRichMedia($id);
-		print_r($baigiang_richmedia);exit();
+		//print_r($baigiang_richmedia);exit();
 		foreach ($baigiang_richmedia->list as $richmedia) {
 			$fileId=$richmedia->fileId;
 			$fileName=$richmedia->fileName;
@@ -43,7 +77,7 @@ class HoclieudientuController extends Controller
 		$str = $fileName;
 		$name = str_replace( '.zip', '', $str );//bo duoi file .zip
 		if (file_exists(storage_path() . '/data/'.$tenmon.'/richmedia/'.$name)) {//nếu file da tai ve va giai nen roi
-			$url_richmedia='http://localhost/libehou/storage/data/'.$tenmon.'/richmedia/'.$name.'/'.'story_html5.html';
+			$url_richmedia='http://thuvienelc.ehou.edu.vn/storage/data/'.$tenmon.'/richmedia/'.$name.'/'.'story_html5.html';
 
 		}else{
 			if ( !is_dir(storage_path() . '/data/'.$tenmon) ) {// neu chưa tồn tại forder này thì tạo 
@@ -63,9 +97,34 @@ class HoclieudientuController extends Controller
 			}
 			$zip->extractTo($extractPath);
 			$zip->close();
-			$url_richmedia='http://localhost/libehou/storage/data/'.$tenmon.'/richmedia/'.$name.'/'.'story_html5.html';
+			$url_richmedia='http://thuvienelc.ehou.edu.vn/storage/data/'.$tenmon.'/richmedia/'.$name.'/'.'story_html5.html';
 		}
         return redirect($url_richmedia);
+	}
+	public function DownloadBaigiangText($id){
+		$HLDT=new HLDT();
+		$baigiang_text=$HLDT->GetDetailBaigiangText($id);
+		foreach ($baigiang_text->list as $text) {
+			$fileId=$text->fileId;
+			$fileName=$text->fileName;
+			$tenmon=$text->lCMSNhomHocLieuName;
+			//$nganh=$hoclieu_data->nganhId;
+		}
+		if (file_exists(storage_path() . '/data/'.$tenmon.'/text/'.$fileName)) {//nếu file da tai ve va giai nen roi
+			$url_text='http://thuvienelc.ehou.edu.vn/storage/data/'.$tenmon.'/text/'.$fileName;
+
+		}else{
+			if ( !is_dir(storage_path() . '/data/'.$tenmon) ) {// neu chưa tồn tại forder này thì tạo 
+				mkdir(storage_path() . '/data/'.$tenmon); //tạo forder tên môn học
+			}
+			if ( !is_dir(storage_path() . '/data/'.$tenmon.'/text') ) {// neu chưa tồn tại forder này thì tạo 
+				mkdir(storage_path() . '/data/'.$tenmon.'/text'); //tạo forder ebook cho môn học đó
+			}
+			$HLDT->DownloadFile($fileName,$fileId,'text',$tenmon);
+			// Code download học liệu về
+			$url_text='http://thuvienelc.ehou.edu.vn/storage/data/'.$tenmon.'/text/'.$fileName;
+		}
+        return redirect($url_text);
 	}
 	public function GetHoclieudientu(){
 		$ebook=new Ebook();

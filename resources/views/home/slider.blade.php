@@ -1,4 +1,4 @@
-<script type="text/javascript" src="{{ asset('meta_slider/js/jquery.js')}}"></script>
+<script type="text/javascript" src="{{ asset('public/meta_slider/js/jquery.js')}}"></script>
 <div style=" margin: 0 auto;" class="ml-slider-3-13-1 ml-slider-pro-2-13-2 metaslider metaslider-flex metaslider-2792 ml-slider ml-slider-lightbox-1-10-1 easy-fancybox-1-8-17 ms-theme-_theme_1404376681 nav-hidden">
    <div id="rev_slider_5_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#e0e0e0;padding:0px;margin-top:0px;margin-bottom:0px;">
                <!-- START REVOLUTION SLIDER 5.1.6 auto mode -->
@@ -8,7 +8,7 @@
                
                   <ul class="slides" >
                      <li class="slide-3324 ms-layer">
-                        <img src="{{ asset('meta_slider/images/bg_brick.jpg')}}" alt="" class="msDefaultImage" height="100%" width="100%" draggable="false">
+                        <img src="{{ asset('public/meta_slider/images/slide-img3.png')}}" alt="" class="msDefaultImage" height="100%" width="100%" draggable="false">
                         <div class="msHtmlOverlay" style="display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                            <div class="layer" style="width: 100%; height: 50px; top: 55px; left: 0px; position: absolute; right: auto; bottom: auto; font-size: 100%; line-height: 100%;" data-width="900" data-height="50" data-top="155" data-left="0">
                               <div class="animation_in animated bounceInLeft" data-animation="bounceInLeft" data-animation-delay="1" style="animation-delay: 1000ms; -moz-animation-delay: 1000ms; -webkit-animation-delay: 1000ms;">
@@ -46,7 +46,7 @@
                         </div>
                      </li>
                      <li class="slide-3325 ms-layer">
-                        <img src="{{ asset('meta_slider/images/tumblr_n9hyqfJavs1st5lhmo1_1280-900x502.jpg')}}" alt="" class="msDefaultImage" height="502" width="900" draggable="false">
+                        <img src="{{ asset('public/meta_slider/images/slide-img6.png')}}" alt="" class="msDefaultImage" height="502" width="900" draggable="false">
                         <!--
 						<div class="msHtmlOverlay" style="display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                            <div class="layer" style="width: 475px; height: 180px; top: 145px; left: 205px; position: absolute; right: auto; bottom: auto; font-size: 100%; line-height: 100%;" data-width="475" data-height="180" data-top="145" data-left="205">
@@ -63,6 +63,9 @@
                         </div>
 						!-->
                      </li>
+                     <li class="slide-3325 ms-layer">
+                        <img src="{{ asset('public/meta_slider/images/slide-img2.png')}}" alt="" class="msDefaultImage" height="502" width="900" draggable="false">
+                     </li>                     
                   </ul>
                
                <ul class="flex-direction-nav">
@@ -73,11 +76,11 @@
             </div>
          </div>
       </div>
-      <link rel="stylesheet" id="metaslider-flex-slider-css" href="{{ asset('meta_slider/css/flexslider.css')}}" type="text/css" media="all" property="stylesheet">
-      <link rel="stylesheet" id="metaslider-public-css" href="{{ asset('meta_slider/css/public.css')}}" type="text/css" media="all" property="stylesheet">
-      <link rel="stylesheet" id="metaslider-pro-animate-css" href="{{ asset('meta_slider/css/animate.css')}}" type="text/css" media="all" property="stylesheet">
-      <link rel="stylesheet" id="metaslider-pro-public-css" href="{{ asset('meta_slider/css/public(1).css')}}" type="text/css" media="all" property="stylesheet">
-      <script type="text/javascript" src="{{ asset('meta_slider/js/jquery.flexslider.min.js')}}"></script>
+      <link rel="stylesheet" id="metaslider-flex-slider-css" href="{{ asset('public/meta_slider/css/flexslider.css')}}" type="text/css" media="all" property="stylesheet">
+      <link rel="stylesheet" id="metaslider-public-css" href="{{ asset('public/meta_slider/css/public.css')}}" type="text/css" media="all" property="stylesheet">
+      <link rel="stylesheet" id="metaslider-pro-animate-css" href="{{ asset('public/meta_slider/css/animate.css')}}" type="text/css" media="all" property="stylesheet">
+      <link rel="stylesheet" id="metaslider-pro-public-css" href="{{ asset('public/meta_slider/css/public(1).css')}}" type="text/css" media="all" property="stylesheet">
+      <script type="text/javascript" src="{{ asset('public/meta_slider/js/jquery.flexslider.min.js')}}"></script>
       <script type="text/javascript">
          var metaslider_2792 = function($) {
                      $('#metaslider_2792').flexslider({ 

@@ -5,7 +5,7 @@
                      <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="widget bks-module">
                            <a href="http://wp.acmeedesign.com/bookstore/" title="Book Store">                            
-                           <img class="logo-img" src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="Book Store" />
+                           <img class="logo-img" src="{{ asset('public/images/logo_thuvien.png') }}" alt="Book Store" />
                            </a>
                         </div>
                         <div id="text-2" class="widget t3-module module widget_text">

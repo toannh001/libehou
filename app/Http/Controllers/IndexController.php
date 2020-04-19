@@ -59,7 +59,7 @@ class IndexController extends Controller
 		$str = $fileName;
 		$name = str_replace( '.zip', '', $str );//bo duoi file .zip
 		if (file_exists(storage_path() . '/data/'.$tenmon.'/ebook/'.$name)) {//nếu file da tai ve va giai nen roi
-			$url_ebook='http://localhost/libehou/storage/data/'.$tenmon.'/ebook/'.$name.'/'.'index.html';
+			$url_ebook='http://thuvienelc.ehou.edu.vn/storage/data/'.$tenmon.'/ebook/'.$name.'/'.'index.html';
 
 		}else{
 			if ( !is_dir(storage_path() . '/data/'.$tenmon) ) {// neu chưa tồn tại forder này thì tạo 
@@ -79,7 +79,7 @@ class IndexController extends Controller
 			}
 			$zip->extractTo($extractPath);
 			$zip->close();
-			$url_ebook='http://localhost/libehou/storage/data/'.$tenmon.'/ebook/'.$name.'/'.'index.html';
+			$url_ebook='http://thuvienelc.ehou.edu.vn/storage/data/'.$tenmon.'/ebook/'.$name.'/'.'index.html';
 		}
 		//$basepath = storage_path() . '/data';
 		//$fileName = 'invoice_20160729';
@@ -94,7 +94,7 @@ class IndexController extends Controller
 		    return response()->download($basepath . '/' . $fileName);
 		}*/
 		//response()->download('http://uni.ehou.edu.vn/?entryPoint=download&id=5cf88390ed2109764');
-        return view('ebook',compact('ebook_detail','ebook_relate','url_ebook'));
+        return view('ebook_detail',compact('ebook_detail','ebook_relate','url_ebook'));
 	}
 	public function GetHoclieudientu(){
 		$ebook=new Ebook();

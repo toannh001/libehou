@@ -32,6 +32,17 @@ Class API{
 		fputs($file,$file_data);
 		fclose($file);
 	}
+	public function ViewBaigiangText($fileId){
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+	    curl_setopt($ch, CURLOPT_URL, "http://uni.ehou.edu.vn/?entryPoint=download&id=".$fileId);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','X-Api-Key: '.$this->apikey, 'Accept: application/json, text/javascript, */*; q=0.01'));
+		$res = curl_exec($ch);
+		curl_close($ch);
+		return $res;
+	}
 	public static function WebPost($url,$param){
 		//Global $apikey;
 		$ch = curl_init();

@@ -11,6 +11,7 @@ use GuzzleHttp\Message\Response;
 use App\Http\Model\Ebook;
 use App\Http\Model\HLDT;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Storage;
 use ZipArchive;
 class SearchController extends Controller
@@ -31,13 +32,42 @@ class SearchController extends Controller
 		$hoclieu_relate=$HLDT->GetRelateHoclieu($id,'TAICHINHNGANHANG');
         return view('hoclieu',compact('hoclieu_detail','hoclieu_relate','baigiang_richmedia','baigiang_text','baigiang_ebook'));
 	}
-	public function Timkiemhoclieu(){
+	public function Timkiemhoclieu(Request $request){
 		//$name_convert=urlencode($name);
+		//$name= $request->input( 's' );
 		$name=Input::get ( 's' );
 		$name_convert = str_replace( ' ', '%20', $name );
 		$HLDT=new HLDT();
 		$hoclieu = $HLDT->Timkiemhoclieu($name_convert);
-        return view('search',compact('hoclieu'));
+		$filter_products =[];
+		// code phân trang
+        foreach($hoclieu->list as $item){
+            $filter_products[]=(array)$item;
+        }
+        $count = count($filter_products);
+        $total=$count;
+		$page=$request->page;
+		if($page == '')
+		{
+			$page=1;
+		}
+		$perPage=5;
+		$offset = ($page-1) * $perPage;
+		$vitridau=($perPage*($page-1))+1; // thứ tự sản phẩm ở vị trí đầu tiên trong trang
+		$vitricuoi=$perPage*$page;// thứ tự cuối cùng của sản phẩm
+        $products = array_slice($filter_products, $offset, $perPage);
+		$data = new Paginator($products,$count,$perPage,$page, ['path'  => $request->url(),'query' => $request->query(),]);
+
+		//$data = new Paginator($hoclieu->list,,$perPage);
+		//print_r($data);
+		//exit();
+		//$paginator = new Illuminate\Pagination\LengthAwarePaginator($hoclieu->list, $hoclieu->total,'5');
+		//$perPage=5;
+		//$data = new Paginator($hoclieu->list, $perPage);
+		//print_r($pagination);
+		//$paginator = Paginator::make($hoclieu->list, $hoclieu->total,5);
+		//exit();
+        return view('search',compact('data','vitridau','vitricuoi','total'));
 	}
 	public function GetHoclieudientu(){
 		$ebook=new Ebook();
