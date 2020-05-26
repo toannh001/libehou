@@ -40,3 +40,31 @@ Route::get('/search/','SearchController@Timkiemhoclieu');
 Route::get('/hoclieu/nganh/{nganh}','HoclieudientuController@GetHoclieuByNganh');
 Route::get('/ebook/nganh/{nganh}','EbookController@GetEbookByNganh');
 Route::get('/hoclieu/downloadtext/{id}','HoclieudientuController@DownloadBaigiangText');
+
+//Login
+Route::get('/login', function () {
+    return view('login');
+});
+Route::post('/login','LoginController@login');
+Route::get('/logout','LoginController@logout');
+
+Route::group(['middleware' => 'auth'], function (){//check login nếu login rồi mới cho chạy các route trên
+
+    //admin
+    Route::group(['prefix'=>'admin'],function(){
+        Route::get('/', function () {
+            return view('admin/index');
+        });
+        Route::get('user','Admin\UserController@getList');
+        Route::get('user/add', function () {
+            return view('admin/user/add');
+        });
+        Route::post('user/add', 'Admin\UserController@add');
+        Route::get('user/delete/{id}', 'Admin\UserController@delete');
+        Route::get('user/edit/{id}', 'Admin\UserController@edit');
+        Route::post('user/edit/{id}', 'Admin\UserController@update');
+        Route::post('user/view', 'Admin\UserController@viewDetail');
+        //Route::get('/admin/user/search/', 'Admin\UserController@search');
+    });
+});
+
